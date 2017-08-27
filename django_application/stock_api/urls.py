@@ -14,7 +14,8 @@ urlpatterns = [
     url(r'^$', views.upload_file, name='index'),
     url(r'^stock_data/$', views.stock_data_list),
     url(r'^prediction/$', views.prediction),
-
+    url(r'^predict/$', views.predict_price),
+    url(r'^converter/$', views.date_converter),
     #   API
     url(r'^api/', include(router.urls)),
 ]

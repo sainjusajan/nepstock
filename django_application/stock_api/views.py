@@ -136,3 +136,55 @@ def prediction(request):
     }
     # return render(request, template, context)
     return JsonResponse({'tomorrow_predicted_value': last_data[0][0]})
+
+def predict_price(request):
+    dates = []
+    price = []
+    template = 'stock_api/new_day_wise_predict.html'
+
+    # Selecting Russell
+    qs = StockData.objects.filter(companyAbbr = 'RUT') #RUSSELL 2000 INDEX(company name)
+    df = read_frame(qs)
+
+    # dataframe values to list
+    dates = df['date']
+    price = df['open']
+    
+    # Converting date to ordinal because Sklearn expect only integer type dates not YYYY-MM-DD
+    import datetime as dt
+    df['date'] = pd.to_datetime(df['date'])
+    dates = df['date'].map(dt.datetime.toordinal)
+    tomorrow_date_in_ordinal = 736559 # yo chai query garney din ho eslai dynamic garau
+    # date = 2012-08-20
+
+    # Fitting Model via Linear Regression
+    linear_mod = linear_model.LinearRegression() #defining the linear regression model
+    dates = np.reshape(dates.values,(len(dates),1)) # converting to matrix of n X 1
+    prices = np.reshape(price.values,(len(price),1))
+    linear_mod.fit(dates,prices) #fitting the data points in the model
+    predicted_price =linear_mod.predict(tomorrow_date_in_ordinal)
+
+    # conversion of ordinal date to human readable date
+    from datetime import datetime
+    dt = datetime.fromordinal(tomorrow_date_in_ordinal)
+    context = {
+    "predicted_price":predicted_price[0][0],
+    "coefficient":linear_mod.coef_[0][0],
+    "constant":linear_mod.intercept_[0],
+    "dt":dt,
+    }
+    return render(request, template, context)
+
+
+def date_converter(request):
+    """
+    Convert ordinal date to normal date
+    """
+    template = 'stock_api/date_converter.html'
+    tomorrow_date_in_ordinal = 736559 # yo ordinal ko real date chaiya ho vaney user sanga magney
+    from datetime import datetime
+    dt = datetime.fromordinal(tomorrow_date_in_ordinal)    # YYYY-M-D
+    context = {
+    "dt":dt,
+    }
+    return render(request, template, context)
