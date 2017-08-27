@@ -1,0 +1,10 @@
+D:\djangoProjects\nepsepaisa\WebApplication.Core\bin\Debug\netcoreapp1.1\WebApplication.Core.deps.json
+D:\djangoProjects\nepsepaisa\WebApplication.Core\bin\Debug\netcoreapp1.1\WebApplication.Core.dll
+D:\djangoProjects\nepsepaisa\WebApplication.Core\bin\Debug\netcoreapp1.1\WebApplication.Core.pdb
+D:\djangoProjects\nepsepaisa\WebApplication.Core\bin\Debug\netcoreapp1.1\WebApplication.Identity.dll
+D:\djangoProjects\nepsepaisa\WebApplication.Core\bin\Debug\netcoreapp1.1\WebApplication.Identity.pdb
+D:\djangoProjects\nepsepaisa\WebApplication.Core\obj\Debug\netcoreapp1.1\WebApplication.Core.csprojResolveAssemblyReference.cache
+D:\djangoProjects\nepsepaisa\WebApplication.Core\obj\Debug\netcoreapp1.1\WebApplication.Core.csproj.CoreCompileInputs.cache
+D:\djangoProjects\nepsepaisa\WebApplication.Core\obj\Debug\netcoreapp1.1\WebApplication.Core.AssemblyInfo.cs
+D:\djangoProjects\nepsepaisa\WebApplication.Core\obj\Debug\netcoreapp1.1\WebApplication.Core.dll
+D:\djangoProjects\nepsepaisa\WebApplication.Core\obj\Debug\netcoreapp1.1\WebApplication.Core.pdb
