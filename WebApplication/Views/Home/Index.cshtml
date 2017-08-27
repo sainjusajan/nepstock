@@ -1,0 +1,639 @@
+﻿
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+
+<div class="content_wrapper">
+
+    <section id="market_news" style="display:none">
+        <div class="container">
+           
+            <div class="row">
+                <div class="col-md-8">
+
+                    <div id="carousel-id" class="carousel slide" data-ride="carousel">
+                       
+                        <div class="carousel-inner">
+                            <div class="item">
+                                <img data-src="holder.js/900x500/auto/#777:#7a7a7a/text:First slide" alt="First slide" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzc3NyI+PC9yZWN0Pjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojN2E3YTdhO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+Rmlyc3Qgc2xpZGU8L3RleHQ+PC9zdmc+">
+                                <div class="container">
+                                    <div class="carousel-caption">
+                                        <h3>Example headline.</h3>
+                                        <p>Note: If you're viewing this page via a to web browser security rules.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="item active">
+                                <img data-src="holder.js/900x500/auto/#555:#5a5a5a/text:Third slide" alt="Third slide" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzU1NSI+PC9yZWN0Pjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojNWE1YTVhO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+VGhpcmQgc2xpZGU8L3RleHQ+PC9zdmc+">
+                                <div class="container">
+                                    <div class="carousel-caption">
+                                        <h3>One more for good measure.</h3>
+                                        <p>Cras justo odio, dapibus ac facilisi ultricies vehicula ut id elit.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="left carousel-control" href="#carousel-id" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                        <a class="right carousel-control" href="#carousel-id" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <div class="most_active_widget">
+                        <h3 class="widget_title">
+                            Most Active
+                        </h3>
+                        <table class="table table-hover">
+
+                            <tbody>
+                                <tr class="negative">
+                                    <td>NASDAK</td>
+                                    <td><i class="fa fa-sort-down"></i> 234.23</td>
+                                    
+                                </tr>
+                                <tr class="positive">
+                                    <td>NASDAK</td>
+                                    <td><i class="fa fa-sort-up"></i> 234.23</td>
+                                    
+
+                                </tr>
+                                <tr class="negative">
+                                    <td>NASDAK</td>
+                                    <td><i class="fa fa-sort-down"></i> 234.23</td>
+                                    
+
+                                </tr>
+                                <tr class="positive">
+                                    <td>NASDAK</td>
+                                    <td><i class="fa fa-sort-up"></i> 234.23</td>
+                                    
+
+                                </tr>
+                                <tr class="positive">
+                                    <td>NASDAK</td>
+                                    <td><i class="fa fa-sort-up"></i> 234.23</td>
+                                    
+
+                                </tr>
+                                <tr class="positive">
+                                    <td>NASDAK</td>
+                                    <td><i class="fa fa-sort-up"></i> 234.23</td>
+                                    
+
+                                </tr>
+                                <tr class="negative">
+                                    <td>NASDAK</td>
+                                    <td><i class="fa fa-sort-down"></i> 234.23</td>
+                                    
+
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="row small_news">
+                @await Component.InvokeAsync("News")
+
+            </div>
+        </div>
+
+    </section>
+
+    <section id="category_wise" class="m-t-20">
+        <div class="container">
+            <div class="across_wrapper">
+
+            <div class="row">
+                <div class="col-md-3">
+                    <h3 class="section_title f-s-39 f-w-100 l-h-50">
+                        Across the Market
+                    </h3>
+                    <p class="l-h-25 m-t-35">
+                        BBC quotes - Bottoms in the investment world don't end with four-year lows; they end with 10- or 15-year lows. - Jim Rogers
+                    </p>
+                </div>
+                <div class="col-md-9">
+                    <div class="row">
+                        <div class="col-md-6">
+                    <div class="most_active_widget">
+                        <h3 class="widget_title active_wala">
+                            Active
+                        </h3>
+                        <table class="table table-hover">
+
+                            <tbody>
+                                <tr class="negative">
+                                    <td>Bank of America Corporation</td>
+                                    <td style="color: #2196F3">
+                                        <!-- <i class="fa fa-sort-down"></i> -->
+                                         23.620001</td>
+                                    
+                                </tr>
+                                <tr class="positive">
+                                    <td>Calpine Corporation</td>
+                                    <td style="color: #2196F3">
+                                        <!-- <i class="fa fa-sort-up"></i> -->
+                                         14.92</td>
+                                    
+
+                                </tr>
+                                <tr class="negative">
+                                    <td>Dow Jones Industrial Average</td>
+                                    <td style="color: #2196F3">
+                                        <!-- <i class="fa fa-sort-down"></i> -->
+                                         21674.509766</td>
+                                    
+
+                                </tr>
+                                <tr class="positive">
+                                    <td>Ford Motor Company</td>
+                                    <td style="color: #2196F3">
+                                        <!-- <i class="fa fa-sort-up"></i> -->
+                                         10.56</td>
+                                    
+
+                                </tr>
+                                <tr class="positive">
+                                    <td>Columbia Small Cap Value Fund I B</td>
+                                    <td style="color: #2196F3">
+                                        <!-- <i class="fa fa-sort-up"></i> -->
+                                         21.26</td>
+                                    
+
+                                </tr>
+                                <tr class="positive">
+                                    <td>Sally Beauty Holdings, Inc</td>
+                                    <td style="color: #2196F3">
+                                        <!-- <i class="fa fa-sort-up"></i> -->
+                                         12332.23</td>
+                                    
+
+                                </tr>
+                                <tr class="negative">
+                                    <td>Infosys Limited</td>
+                                    <td style="color: #2196F3">
+                                        <!-- <i class="fa fa-sort-down"></i> -->
+                                         4432.12</td>
+                                    
+
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="most_active_widget">
+                        <h3 class="widget_title gainers">
+                            Gainers
+                        </h3>
+                        <table class="table table-hover">
+
+                            <tbody>
+                                <tr class="positive">
+                                    <td>Nikkei 225</td>
+                                    <td><i class="fa fa-sort-up"></i> 234.23</td>
+                                    
+
+                                </tr>
+                                <tr class="positive">
+                                    <td>ProFunds UltraSector Oil & Gas Svc</td>
+                                    <td><i class="fa fa-sort-up"></i> 234.23</td>
+                                    
+
+                                </tr>
+                                <tr class="positive">
+                                    <td>Regal Entertainment Group</td>
+                                    <td><i class="fa fa-sort-up"></i> 234.23</td>
+                                    
+
+                                </tr>
+                                <tr class="positive">
+                                    <td>Ross Stores, Inc.</td>
+                                    <td><i class="fa fa-sort-up"></i> 234.23</td>
+                                    
+
+                                </tr>
+                                <tr class="positive">
+                                    <td>T. Rowe Price Latin America</td>
+                                    <td><i class="fa fa-sort-up"></i> 234.23</td>
+                                    
+
+                                </tr>
+                                <tr class="positive">
+                                    <td>Snap Inc.</td>
+                                    <td><i class="fa fa-sort-up"></i> 234.23</td>
+                                    
+
+                                </tr>
+                                <tr class="positive">
+                                    <td>VOLATILITY S&P 500</td>
+                                    <td><i class="fa fa-sort-up"></i> 234.23</td>
+                                    
+
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-3" style="display:none">
+                    <div class="most_active_widget">
+                        <h3 class="widget_title losers">
+                            Losers
+                        </h3>
+                        <table class="table table-hover">
+
+                            <tbody>
+                                <tr class="negative">
+                                    <td>NASDAK</td>
+                                    <td><i class="fa fa-sort-down"></i> 234.23</td>
+                                    
+
+                                </tr>
+                                <tr class="negative">
+                                    <td>NASDAK</td>
+                                    <td><i class="fa fa-sort-down"></i> 234.23</td>
+                                    
+
+                                </tr>
+                                <tr class="negative">
+                                    <td>NASDAK</td>
+                                    <td><i class="fa fa-sort-down"></i> 234.23</td>
+                                    
+
+                                </tr>
+                                <tr class="negative">
+                                    <td>NASDAK</td>
+                                    <td><i class="fa fa-sort-down"></i> 234.23</td>
+                                    
+
+                                </tr>
+                                <tr class="negative">
+                                    <td>NASDAK</td>
+                                    <td><i class="fa fa-sort-down"></i> 234.23</td>
+                                    
+
+                                </tr>
+                                <tr class="negative">
+                                    <td>NASDAK</td>
+                                    <td><i class="fa fa-sort-down"></i> 234.23</td>
+                                    
+
+                                </tr>
+                                <tr class="negative">
+                                    <td>NASDAK</td>
+                                    <td><i class="fa fa-sort-down"></i> 234.23</td>
+                                    
+
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section id="simulation">
+        <div class="container">
+            <div class="row">
+                    <h3 class="section_title f-s-30 f-w-100 m-b-30">Stock simulation</h3>
+                <div class="col-md-7">
+                        
+                        <table class="table three_entity">
+            
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <p class="title">Alphabet Inc	</p>
+                                        <p class="current_price f-s-30">
+                                            <!-- <i class="fa fa-sort-up m-r-10"></i> -->
+                                            910.97998
+</p>
+                                        <!-- <p class="from_yesterday">+24.42</p> -->
+                
+                                    </td>
+                                    <td>
+                                        <p class="title">General Electric Company	</p>
+                                        <p class="current_price f-s-30">
+                                            <!-- <i class="fa fa-sort-up m-r-10"></i> -->
+                                            24.549999
+</p>
+                                        <!-- <p class="from_yesterday">+24.42</p> -->
+                
+                                    </td>
+                                    <td class="negative">
+                                        <p class="title">Calpine Corporation	</p>
+                                        <p class="current_price f-s-30">
+                                            <!-- <i class="fa fa-sort-down m-r-10"></i> -->
+                                            14.92</p>
+                                        <!-- <p class="from_yesterday">-24.42</p> -->
+                
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+
+
+                        <div id="linechart_material" style="width: 100%; height: 500px;"></div>
+
+
+
+                </div>
+                    <div class="col-md-5">  
+                           <div class="">
+                       
+                        <table class="table table-hover table-bordered">
+
+                            <tbody>
+
+<tr><td>Alphabet Inc</td>
+<td>910.97998</td></tr>
+
+<tr><td>Baker Hughes Incorporated</td>
+<td>58.487</td></tr>
+
+<tr><td>Bank of America Corporation</td>
+<td>23.620001</td></tr>
+
+<tr><td>CBOE Interest Rate</td>
+<td>2.117</td></tr>
+
+<tr><td>Calpine Corporation</td>
+<td>14.92</td></tr>
+
+<tr><td>Columbia Small Cap Value Fund I B</td>
+<td>21.6</td></tr>
+
+<tr><td>Dow Jones Industrial Average</td>
+<td>21674.509766</td></tr>
+
+<tr><td>Foot Locker, Inc.</td>
+<td>34.380001</td></tr>
+
+<tr><td>Ford Motor Company</td>
+<td>10.56</td></tr>
+
+<tr><td>General Electric Company</td>
+<td>24.549999</td></tr>
+
+<tr><td>Infosys Limited</td>
+<td>14.79</td></tr>
+
+<tr><td>JPMorgan Latin America I</td>
+<td>15.83</td></tr>
+
+<tr><td>NASDAQ Composite</td>
+<td>6216.529785</td></tr>
+
+<tr><td>Nikkei 225</td>
+<td>20118.859375</td></tr>
+
+<tr><td>ProFunds UltraSector Oil & Gas Investor</td>
+<td>30.190001</td></tr>
+
+<tr><td>ProFunds UltraSector Oil & Gas Svc</td>
+<td>25.780001</td></tr>
+<!-- 
+<tr><td>RUSSELL 2000 INDEX</td>
+<td>1357.790039</td></tr>
+
+<tr><td>Regal Entertainment Group</td>
+<td>15.12</td></tr>
+
+<tr><td>Reynolds American Inc.</td>
+<td>65.400002</td></tr>
+
+<tr><td>Ross Stores, Inc.</td>
+<td>59.02</td></tr>
+
+<tr><td>S&P 500</td>
+<td>2425.550049</td></tr>
+
+<tr><td>Sally Beauty Holdings, Inc.</td>
+<td>17.93</td></tr>
+
+<tr><td>Snap Inc.</td>
+<td>14.01</td></tr>
+
+<tr><td>T. Rowe Price Latin America</td>
+<td>18.709999</td></tr>
+
+<tr><td>The Estée Lauder Companies Inc.</td>
+<td>105.919998</td></tr>
+
+<tr><td>VOLATILITY S&P 500</td>
+<td>14.26</td></tr>
+
+<tr><td>Viacom, Inc.</td>
+<td>38.799999</td></tr>
+
+<tr><td>WisdomTree Middle East Dividend ETF</td>
+<td>17.4</td></tr>
+
+<tr><td>iShares Latin America 40 ETF</td>
+<td>33.869999</td></tr>
+
+<tr><td>iShares MSCI Chile Capped ETF</td>
+<td>46.209999</td></tr>
+
+<tr><td>iShares MSCI South Africa ETF</td>
+<td>60.880001</td></tr>
+
+<tr><td>iShares North American Tech-Software ETF</td>
+<td>101.199997</td></tr> -->
+
+
+<!-- 
+                                <tr class="negative">
+                                    <td>NASDAK</td>
+                                    <td><i class="fa fa-sort-down"></i> 234.23</td>
+                                    
+
+                                </tr>
+                                <tr class="positive">
+                                    <td>NASDAK</td>
+                                    <td><i class="fa fa-sort-up"></i> 234.23</td>
+                                    
+
+                                </tr>
+                                <tr class="negative">
+                                    <td>NASDAK</td>
+                                    <td><i class="fa fa-sort-down"></i> 234.23</td>
+                                    
+
+                                </tr>
+                                <tr class="positive">
+                                    <td>NASDAK</td>
+                                    <td><i class="fa fa-sort-up"></i> 234.23</td>
+                                    
+
+                                </tr>
+                                <tr class="positive">
+                                    <td>NASDAK</td>
+                                    <td><i class="fa fa-sort-up"></i> 234.23</td>
+                                    
+
+                                </tr>
+                                <tr class="positive">
+                                    <td>NASDAK</td>
+                                    <td><i class="fa fa-sort-up"></i> 234.23</td>
+                                    
+
+                                </tr>
+                                <tr class="negative">
+                                    <td>NASDAK</td>
+                                    <td><i class="fa fa-sort-down"></i> 234.23</td>
+                                    
+
+                                </tr>
+                                <tr class="positive">
+                                    <td>NASDAK</td>
+                                    <td><i class="fa fa-sort-up"></i> 234.23</td>
+                                    
+
+                                </tr>
+                                <tr class="positive">
+                                    <td>NASDAK</td>
+                                    <td><i class="fa fa-sort-up"></i> 234.23</td>
+                                    
+
+                                </tr>
+                                <tr class="positive">
+                                    <td>NASDAK</td>
+                                    <td><i class="fa fa-sort-up"></i> 234.23</td>
+                                    
+
+                                </tr>
+                                <tr class="negative">
+                                    <td>NASDAK</td>
+                                    <td><i class="fa fa-sort-down"></i> 234.23</td>
+                                    
+
+                                </tr>
+                                <tr class="positive">
+                                    <td>NASDAK</td>
+                                    <td><i class="fa fa-sort-up"></i> 234.23</td>
+                                    
+
+                                </tr>
+                                <tr class="positive">
+                                    <td>NASDAK</td>
+                                    <td><i class="fa fa-sort-up"></i> 234.23</td>
+                                    
+
+                                </tr>
+                                <tr class="positive">
+                                    <td>NASDAK</td>
+                                    <td><i class="fa fa-sort-up"></i> 234.23</td>
+                                    
+
+                                </tr>
+                                <tr class="negative">
+                                    <td>NASDAK</td>
+                                    <td><i class="fa fa-sort-down"></i> 234.23</td>
+                                    
+
+                                </tr>
+                                <tr class="positive">
+                                    <td>NASDAK</td>
+                                    <td><i class="fa fa-sort-up"></i> 234.23</td>
+                                    
+
+                                </tr>
+                                <tr class="negative">
+                                    <td>NASDAK</td>
+                                    <td><i class="fa fa-sort-down"></i> 234.23</td>
+                                    
+
+                                </tr> -->
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+</div>
+
+
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['line']});
+      google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'Day');
+      data.addColumn('number', 'Alphabet Inc');
+      data.addColumn('number', 'General Electric Company');
+      data.addColumn('number', 'Calpine Corporation');
+
+      data.addRows([
+        [1,  37.8, 80.8, 41.8],
+        [2,  30.9, 69.5, 32.4],
+        [3,  25.4,   57, 25.7],
+        [4,  11.7, 18.8, 10.5],
+        [5,  11.9, 17.6, 10.4],
+        [6,   8.8, 13.6,  7.7],
+        [7,   7.6, 12.3,  9.6],
+        [8,  12.3, 29.2, 10.6],
+        [9,  16.9, 42.9, 14.8],
+        [10, 12.8, 30.9, 11.6],
+        [11,  5.3,  7.9,  4.7],
+        [12,  6.6,  8.4,  5.2],
+        [13,  4.8,  6.3,  3.6],
+        [14,  4.2,  6.2,  3.4]
+      ]);
+
+      var options = {
+        chart: {
+          title: 'Stock market Price of companies',
+          subtitle: 'in Dollar ($)'
+        },
+        
+      };
+
+      var chart = new google.charts.Line(document.getElementById('linechart_material'));
+
+      chart.draw(data, google.charts.Line.convertOptions(options));
+    }
+    </script>

@@ -1,0 +1,102 @@
+﻿@using System.Collections.Generic
+@using Microsoft.AspNetCore.Http
+@using Microsoft.AspNetCore.Http.Authentication
+@using WebApplication.Infrastructure.ViewModels.AccountViewModels
+@using WebApplication.Identity
+@using Microsoft.AspNetCore.Identity
+@model LoginViewModel
+@inject SignInManager<IdentityUser> SignInManager
+
+@{
+    ViewData["Title"] = "Log in";
+    var fb = "tn-fb";
+    var twitter = "tn-twitter";
+    var googleplus = "tn-gplus";
+}
+
+<section id="stock_login">
+    <div class="container">
+        <div class="login-page">
+
+  <div class="form">
+      <div class="">
+        <div asp-validation-summary="All" class="text-danger"></div>
+    </div>
+      <h3 class="text-center m-t-0 p-b-20">Sign In</h3>
+    <form class="login-form" asp-controller="Account" asp-action="Login" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" role="form">
+      <input asp-for="UserName" type="text" placeholder="email"/>
+      <input asp-for="Password" type="password" placeholder="password"/>
+      <button>login</button>
+      <p class="message"> <a asp-action="ForgotPassword">Forgot Password</a></p>
+      <!-- <p></p> -->
+    </form>
+<div class="tn-vp-center">
+    
+                
+                <br />
+                <div class="tn-social-login-body">
+
+                    @{
+                        var loginProviders = SignInManager.GetExternalAuthenticationSchemes().ToList();
+                        if (loginProviders.Count == 0)
+                        {
+                            <div>
+                                <p>
+                                    We do not support login from external providers yet.
+                                </p>
+                            </div>
+                        }
+                        else
+                        {
+                            <form asp-controller="Account" asp-action="ExternalLogin" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" class="form-horizontal" role="form">
+                                <div>
+                                    <p>
+                                        @foreach (var provider in loginProviders)
+                                        {
+                                            <button type="submit" class="tn-btn tn-btn-md
+                                                        @if (provider.AuthenticationScheme == "Facebook")
+                                                        {
+                                                        @fb
+
+                                                        }
+                                                        @if (provider.AuthenticationScheme == "Twitter")
+                                                        {
+                                                            @twitter
+
+                                                        }
+                                                        @if (provider.AuthenticationScheme == "Google")
+                                                        {
+
+                                                            @googleplus
+                                                        }
+
+                                                        " name="provider" value="@provider.AuthenticationScheme" title="Log in using your @provider.DisplayName account">
+                                                @provider.AuthenticationScheme
+                                            </button>
+                                        }
+                                    </p>
+                                </div>
+                            </form>
+                        }
+                    }
+                </div>
+    
+
+
+    </div>
+
+
+  </div>
+</div>
+    </div>
+</section>
+
+
+
+
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}
+
+

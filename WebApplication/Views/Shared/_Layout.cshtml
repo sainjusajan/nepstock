@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewData["Title"] - WeebApplication</title>
+
+    <environment names="Development">
+
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link href="~/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+        <link rel="stylesheet" href="~/css/mixins.css" />
+        <link rel="stylesheet" href="~/css/styles.css" />
+
+        @*<link rel="stylesheet" href="~/lib/kendo-ui/styles/kendo.common-nova.min.css" />
+            <link rel="stylesheet" href="~/lib/kendo-ui/styles/kendo.nova.min.css" />*@
+
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        @* Place Kendo UI scripts after jQuery *@
+        @*<script src="~/lib/kendo-ui/js/kendo.all.min.js"></script>
+            <script src="~/lib/kendo-ui/js/kendo.aspnetmvc.min.js"></script>*@
+
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/js/stock.js" asp-append-version="true"></script>
+
+
+        @RenderSection("CSS", required: false)
+
+    </environment>
+    <environment names="Staging,Production">
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/mixins.css" />
+        <link rel="stylesheet" href="~/css/styles.css" />
+
+
+        @*<link rel="stylesheet"
+                  href="https://kendo.cdn.telerik.com/2017.2.621/styles/kendo.common-nova.min.css"
+                  asp-fallback-href="~/lib/kendo-ui/styles/kendo.common-nova.min.css"
+                  asp-fallback-test-class="k-common-test-class"
+                  asp-fallback-test-property="opacity" asp-fallback-test-value="0" />
+
+            <link rel="stylesheet"
+                  href="https://kendo.cdn.telerik.com/2017.2.621/styles/kendo.nova.min.css"
+                  asp-fallback-href="~/lib/kendo-ui/styles/kendo.nova.min.css"
+                  asp-fallback-test-class="k-theme-test-class"
+                  asp-fallback-test-property="opacity" asp-fallback-test-value="0" />*@
+
+
+        @RenderSection("CSS", required: false)
+    </environment>
+    @RenderSection("JS", required: false)
+</head>
+
+<body>
+
+
+    <section id="ss_header">
+        <nav class="navbar navbar-inverse navbar-static-top" style="width: 100%">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a asp-controller="home" asp-action="index" class="navbar-brand">NEP-STOCK</a>
+                </div>
+
+                <div class="collapse navbar-collapse js-navbar-collapse">
+                    <ul class="nav navbar-nav">
+
+                        <!-- <li><a href="#">Today </a></li> -->
+                        <li><a asp-controller="Markets" asp-action="Index">Markets </a></li>
+                        <li><a href="#">Today </a></li>
+                        <li><a asp-controller="Markets" asp-action="Index">Markets</a></li>
+                        <li><a  asp-controller="Home" asp-action="careers">Careers</a></li>
+                        <li><a  asp-controller="Home" asp-action="News">News</a></li>
+                    </ul>
+                    @await Component.InvokeAsync("LoginStatus")
+
+                </div>
+                <!-- /.nav-collapse -->
+            </div>
+        </nav>
+
+    </section>
+
+    <section id="my_marquee">
+        <div class="container">
+            <marquee>
+                <span class="positive">Alphabet Inc. <i class="fa fa-sort-up m-r-5 m-l-5"></i>910.97998</span>
+                <span class="negative">Baker Hughes Incorporated <i class="fa fa-sort-down m-r-5 m-l-5"></i>58.487</span>
+                <span class="positive">Regal Entertainment Group <i class="fa fa-sort-up m-r-5 m-l-5"></i> 16.290001</span>
+
+                @*<span> RUSSELL 2000 INDEX	1357.790039</span>
+                <span> Regal Entertainment Group	15.12</span>
+                <span> Reynolds American Inc.	65.400002</span>
+                <span> Ross Stores, Inc.	59.02</span>
+                <span> S&P 500	2425.550049</span>
+                <span> Sally Beauty Holdings, Inc.	17.93</span>
+                <span> Snap Inc.	14.01</span>
+                <span> T. Rowe Price Latin America	18.709999</span>
+                <span> The Est�e Lauder Companies Inc.	105.919998</span>
+                <span> VOLATILITY S&P 500	14.26</span>
+                <span> Viacom, Inc.	38.799999</span>
+                <span> WisdomTree Middle East Dividend ETF	17.4</span>
+                <span> iShares Latin America 40 ETF	33.869999</span>*@
+
+            </marquee>
+
+        </div>
+    </section>
+    <div class="">
+        @RenderBody()
+
+    </div>
+
+
+    <footer class="container-fluid text-center bg-lightgray m-t-60">
+
+        <div class="copyrights" style="margin-top:25px;">
+            <p>
+              
+                <br>
+                <span>Developer : Group</span>
+            </p>
+            <p><a href="" target="_blank">Linkedin <i class="fa fa-linkedin-square" aria-hidden="true"></i> </a></p>
+        </div>
+    </footer>
+
+
+
+    <environment names="Development">
+
+
+
+    </environment>
+    <environment names="Staging,Production">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery">
+        </script>
+        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
+        </script>
+        <script src="~/js/stock.min.js" asp-append-version="true"></script>
+
+
+
+    </environment>
+
+
+    @RenderSection("scripts", required: false)
+    @RenderSection("Breadcrumbs", required: false)    
+</body>
+</html>

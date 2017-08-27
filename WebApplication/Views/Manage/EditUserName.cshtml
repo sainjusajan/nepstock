@@ -1,0 +1,11 @@
+﻿@using WebApplication.Infrastructure.ViewModels.ManageViewModels
+@model IndexViewModel
+<h2>Edit UserName Page </h2>
+<form asp-controller="Manage" asp-action="EditUserName"  method="post" class="form-horizontal" role="form">
+    <div>
+        <label asp-for="UserName"></label>
+        <input asp-for="UserName" value="@Model.UserName"/>
+    </div>
+    <button type="submit">Update</button>
+    <button type="submit" asp-action="CancelEdit">Cancel</button>
+</form>

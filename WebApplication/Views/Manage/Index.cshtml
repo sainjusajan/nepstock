@@ -1,0 +1,57 @@
+﻿@*@using WebApplication.Infrastructure.ViewModels.ProfileViewModels
+@model ProfileViewModel*@
+@using WebApplication.Infrastructure.ViewModels.ManageViewModels
+@model IndexViewModel
+
+@{
+    ViewData["Title"] = "Manage your account";
+}
+
+<p class="text-success">@ViewData["StatusMessage"]</p>
+
+
+<div class="container">
+
+    <div class="row">
+        
+        <div class="col-xs-8 col-md-9">
+            <div class="tab-content setting-menu-detail">
+                <div id="general" class="tab-pane fade in active">
+              
+
+                    <div class="setting-detail">
+                        <ul class="setting-detail-detail">
+                            <li class="profilePicUpload">
+                                @*@await  Html.PartialAsync("_GeneralPartial", Model)*@
+                                @*@RenderPage("~/Views/Manage/GetUserInfo.cshtml")*@
+
+                                
+                                    <div>
+                                        <div>
+                                            <h5>Username: @Model.UserName<a asp-action="EditUserName">Edit</a></h5>
+                                        </div>
+                                        <div>
+                                            <h5>Email: @Model.Email</h5>
+                                        </div>
+                                        <div>
+                                            Password: <a asp-action="ChangePassword">Edit</a>
+                                        </div>
+                                        <div>
+                                            <h5>Phone Number: @Model.PhoneNumber</h5>
+                                        </div>
+                                        <div>
+                                            <h5>Name: @Model.FirstName @Model.LastName <a asp-action="EditName">Edit</a></h5>
+                                        </div>
+
+                                    </div>
+                                
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                
+                
+            </div>
+        </div>
+

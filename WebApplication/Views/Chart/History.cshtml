@@ -1,0 +1,215 @@
+﻿@section HeadContent
+    {
+    <script>
+        var parentDataFolder = "shared";
+    </script>
+    <script type="text/javascript" src="@Url.Content("~/shared/web/financial/stock-history/scripts.js")"></script>
+    <link rel="stylesheet" href="@Url.Content("~/shared/web/financial/stock-history/styles.css")" />
+}
+<div class="demo-section k-content wide hidden-on-narrow">
+    <h3 class="example-title">Stock<span>History</span></h3>
+    <h4 class="example-description">Kendo UI Data Visualization Project</h4>
+
+    @(Html.Kendo().TabStrip()
+    .Name("year-filtering-tabs")
+    .Animation(false)
+    .Items(items =>
+    {
+        items.Add().Text("2007");
+        items.Add().Text("2008");
+        items.Add().Text("2009");
+        items.Add().Text("2010");
+        items.Add().Text("2011").Selected(true);
+    })
+    .HtmlAttributes(new { @class = "filtering-tabs" }))
+
+    <h5 class="example-subtitle">Closing stock prices</h5>
+    <span class="metric">throughout <span class="selected-year"></span></span>
+    <div id="chart-type-chooser">
+        <strong class="example-subtitle radio-group-label">Chart type</strong>
+
+        <ul class="radio-group">
+            <li><input type="radio" name="chart-type" value="area" id="chart-type-area" checked><label for="chart-type-area">Area</label></li>
+            <li><input type="radio" name="chart-type" value="line" id="chart-type-line"><label for="chart-type-line">Line</label></li>
+        </ul>
+    </div>
+
+    @(Html.Kendo().Chart<WebApplication.Core.Domains.StockDataPoint>()
+        .Name("yearly-stock-prices")
+        .RenderAs(RenderingMode.Canvas)
+        .DataSource("stocksDataSource")
+        .AutoBind(false)
+        .SeriesDefaults(sd => sd
+                .Area()
+                .Markers(m => m.Visible(false))
+                .Opacity(0.8))
+        .Series(series =>
+        {
+            series.Area(s => s.Close);
+        })
+        .SeriesColors("#70b5dd", "#1083c7", "#1c638d")
+        .ValueAxis(va => va
+                .Numeric().Line(l => l.Visible(false))
+                .Labels(lb => lb
+                .Format("${0}")
+                .Skip(2)
+                .Step(2)
+                .Color("#727f8e"))
+        )
+        .CategoryAxis(ca => ca
+                .Categories(model => model.Date)
+                .Labels(lb => lb.Format("MMM").Color("#727f8e"))
+                .Line(l => l.Visible(false))
+                .MajorTicks(mt => mt.Visible(false))
+                .MajorGridLines(mgl => mgl.Visible(false))
+        )
+        .Legend(lg => lg.Visible(false)))
+
+    <script type="text/x-kendo-template" id="company-info-template">
+        <dl class="stat first">
+            <dt class="example-subtitle">
+                #= name # stock price
+                <span class="metric">US dollars</span>
+            </dt>
+            <dd class="eoy-closing"></dd>
+        </dl>
+
+        <div class="company-trends">
+            <div class="example-subtitle">
+                Stock market trends
+                <span class="metric">throughout the year</span>
+            </div>
+
+            <dl class="stat trend-container highest-container">
+                <dt class="example-subtitle">Highest stock price</dt>
+                <dd class="highest"></dd>
+                <dd class="sparkline">
+                    @(Html.Kendo().Sparkline<WebApplication.Core.Domains.StockDataPoint>()
+                        .Name("highest-sparkline")
+                        .RenderAs(RenderingMode.Canvas)
+                        .Series(series => series
+                            .Line(field => field.High).Color("\\#639514"))
+                        .SeriesDefaults(sd => sd.Line()
+                            .Width(2)
+                            .Tooltip(tooltip => tooltip.Visible(false)))
+                        .CategoryAxis(categoryAxis => categoryAxis
+                        .Crosshair(crossHair => crossHair.Visible(false)))
+                        .ToClientTemplate())
+                </dd>
+
+            </dl>
+
+            <dl class="stat trend-container lowest-container">
+                <dt class="example-subtitle">Lowest stock price</dt>
+                <dd class="lowest"></dd>
+                <dd class="sparkline">
+                    @(Html.Kendo().Sparkline<WebApplication.Core.Domains.StockDataPoint>()
+                        .Name("lowest-sparkline")
+                        .RenderAs(RenderingMode.Canvas)
+                        .Series(series => series
+                            .Line(field => field.Low).Color("\\#cd1533"))
+                        .SeriesDefaults(sd => sd.Line()
+                            .Width(2)
+                            .Tooltip(tooltip => tooltip.Visible(false)))
+                        .CategoryAxis(categoryAxis => categoryAxis
+                        .Crosshair(crossHair => crossHair.Visible(false)))
+                        .ToClientTemplate())
+                </dd>
+            </dl>
+
+            <dl class="stat trend-container">
+                <dt class="example-subtitle">YoY change</dt>
+                <dd class="relative-value"></dd>
+                <dd class="sparkline">
+                    @(Html.Kendo().Sparkline()
+                    .Name("relative-value-sparkline")
+                    .RenderAs(RenderingMode.Canvas)
+                    .SeriesDefaults(sd => sd.Line()
+                        .Width(2)
+                        .Tooltip(tooltip => tooltip.Visible(false)))
+                    .CategoryAxis(categoryAxis => categoryAxis
+                    .Crosshair(crossHair => crossHair.Visible(false)))
+                    .ToClientTemplate())
+                </dd>
+            </dl>
+            @(Html.Kendo().Chart()
+                .Name("relative-value-pie")
+                .RenderAs(RenderingMode.Canvas)
+                .SeriesDefaults(sd => sd
+                        .Pie()
+                        .Overlay(overlay => overlay.Gradient(ChartSeriesGradient.None))
+                    )
+                .SeriesColors("\\#70b5dd", "\\#1083c7", "\\#1c638d")
+                .Legend(legend => legend.Visible(false))
+                .ToClientTemplate())
+        </div>
+
+        <div class="separator"></div>
+
+        <dl class="stat first">
+            <dt class="example-subtitle">
+                volume of traded stocks
+                <span class="metric">traded stocks</span>
+            </dt>
+            <dd class="volume"></dd>
+        </dl>
+        @(Html.Kendo().Chart<WebApplication.Core.Domains.StockDataPoint>()
+            .Name("volume-chart")
+            .RenderAs(RenderingMode.Canvas)
+            .Series(series => series.Column(model => model.Volume).Gap(0.7))
+            .SeriesDefaults(sd => sd
+                    .Column()
+                    .Color("\\#1c638d")
+                    .Border(border => border.Width(0))
+                    .Overlay(overlay => overlay.Gradient(ChartSeriesGradient.None))
+                    )
+                .AxisDefaults(axisDefault => axisDefault
+                    .MajorGridLines(mgl => mgl.Visible(false))
+                    .MajorTicks(mt => mt.Visible(false)))
+                .CategoryAxis(ca => ca
+                    .Categories(model => model.Date)
+                    .Labels(lb => lb.Format("MMM").Color("\\#727f8e")))
+                .Tooltip(tooltip => tooltip.Visible(false))
+                .ValueAxis(valueAxis => valueAxis.Numeric().Visible(false))
+            .Legend(legend => legend.Visible(false))
+            .ToClientTemplate())
+    </script>
+    @(Html.Kendo().TabStrip()
+        .Name("company-filtering-tabs")
+        .Animation(false)
+        .Items(items =>
+        {
+            items.Add().Text("Google").Selected(true);
+            items.Add().Text("Apple");
+            items.Add().Text("Amazon");
+        })
+        .HtmlAttributes(new { @class = "filtering-tabs" }))
+
+    <div class="company-info" id="google"></div>
+</div>
+<div class="responsive-message"></div>
+
+@(Html.Kendo().DataSource<WebApplication.Core.Domains.StockDataPoint>()
+    .Name("stocksDataSource")
+    .Custom(ds => ds
+            .Transport(ts => ts
+                .Read(read => read
+                    .Url("../content/dataviz/dashboards/stock-data-2011.json")
+                    .DataType("json")))
+            .Group(group => group.Add(field => field.Symbol))
+            .Sort(sort => sort.Add(field => field.Date).Ascending())
+            .Schema(schema => schema
+                    .Model(model =>
+                    {
+                        model.Field("Open", typeof(decimal)).From("open");
+                        model.Field("High", typeof(decimal)).From("high");
+                        model.Field("Low", typeof(decimal)).From("low");
+                        model.Field("Close", typeof(decimal)).From("close");
+                        model.Field("Date", typeof(DateTime)).From("date");
+                        model.Field("Symbol", typeof(string)).From("symbol");
+                        model.Field("Volume", typeof(long)).From("volume");
+                    }))
+                )
+)
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700,300" rel="stylesheet">

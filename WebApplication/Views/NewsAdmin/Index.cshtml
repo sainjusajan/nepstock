@@ -1,0 +1,70 @@
+﻿@model List<WebApplication.Core.Domains.News>
+
+@{
+    ViewData["Title"] = "News ";
+}
+
+<div class="panel">
+    <div class="panel-heading">
+
+
+        <header class="panel-heading" style="margin-bottom:30px">All the News<span class="pull-right"> <a asp-action="Create">Create New</a> </span></header>
+
+    </div>
+    <div class="panel-body">
+        <div class="clearfix"></div>
+        <div class="col-md-12">
+            <div class="m-0 p-t-30">
+
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped mb0">
+                        <thead>
+                            <tr>
+                                <th>Title </th>
+                                <th>Body</th>
+                                <th>Published Date</th>
+                                <th>Added By </th>
+                                <th style="min-width:200px;">Actions</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr class="text-center">
+                                    <td>@Html.DisplayFor(modelItem => item.Title)</td>
+                                    <td>@Html.Raw(item.Body)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.publishedDate)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.addedBy)</td>
+                                    <td>
+                                        <a class="btn btn-default" asp-action="Edit" asp-route-id="@item.Id" data-toggle=tooltip data-placement=top title="Edit"><i class="fa fa-edit"></i></a>
+                                        &nbsp;
+                                        <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.Id" data-toggle=tooltip data-placement=top title="Details"><i class="fa fa-eye"></i></a>
+                                        &nbsp;
+                                        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id" data-toggle=tooltip data-placement=top title="Delete"><i class="fa fa-trash"></i></a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section Breadcrumbs{
+    <ol class="breadcrumb">
+        <li>
+            <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+        </li>
+
+        <li class="active">
+            <a href="javascript:;">News</a>
+        </li>
+    </ol>
+}

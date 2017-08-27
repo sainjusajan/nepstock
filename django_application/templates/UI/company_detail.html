@@ -1,0 +1,357 @@
+{% extends "UI/base.html" %} {% load static %} {% block content %}
+
+<section id="company_detail">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="section_title f-s-30 f-w-100 m-b-30">Company ABC NAME</h3>
+
+                <table class="table three_entity table-hover table-bordered" style="max-width:300px">
+
+                    <tbody>
+                        <tr>
+                            <td>
+                                <p class="title">DOW</p>
+                                <p class="current_price f-s-30"><i class="fa fa-sort-up m-r-10"></i>221,113</p>
+                                <p class="from_yesterday">+24.42</p>
+
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+                <div id="linechart_material" style="width: 100%; height: 500px;"></div>
+
+            </div>
+
+        </div>
+        <div class="row m-t-30">
+            <div class="col-md-4">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+
+                            <th colspan="2">Todays : </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>Opening Price</b></td>
+                            <td>23232</td>
+                        </tr>
+
+                        <tr>
+                            <td><b>Closing Price</b></td>
+                            <td>23232</td>
+                        </tr>
+
+                        <tr>
+                            <td><b>High Price</b></td>
+                            <td>23232</td>
+                        </tr>
+
+                        <tr>
+                            <td><b>Low Price</b></td>
+                            <td>23232</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-7 col-md-offset-1">
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th colspan="2">Tomorrow's Tentative
+
+                                <p class="f-s-40 f-w-100" style="color: green">Based On Predictive Analysis</p>
+                            </th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><p class="f-s-30 f-w-100">Value of Stock</p></td>
+                            <td><p class="f-s-30 f-w-100">333.33</p></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+
+        <h3 class="section_title f-s-30 f-w-100 m-b-30 m-t-100">Market News</h3>
+        <div class="row">
+            <div class="col-md-3 col-sm-3 col-xs-4">
+                <div class="post-slide">
+
+                    <div class="post-img">
+                        <a href="#"><img src="{% static 'UI/images/img-2.jpg' %}" alt=""></a>
+                    </div>
+
+                    <div class="post-content">
+
+                        <h3 class="post-title"><a href="#">Latest News Post</a></h3>
+
+
+                        <ul class="post-bar">
+                            <li>
+                                <i class="fa fa-folder"></i>
+                                <a href="#">Mockup</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-4">
+                <div class="post-slide">
+
+                    <div class="post-img">
+                        <a href="#"><img src="{% static 'UI/images/img-2.jpg' %}" alt=""></a>
+                    </div>
+
+                    <div class="post-content">
+
+                        <h3 class="post-title"><a href="#">Latest News Post</a></h3>
+
+
+                        <ul class="post-bar">
+                            <li>
+                                <i class="fa fa-folder"></i>
+                                <a href="#">Mockup</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-4">
+                <div class="post-slide">
+
+                    <div class="post-img">
+                        <a href="#"><img src="{% static 'UI/images/img-2.jpg' %}" alt=""></a>
+                    </div>
+
+                    <div class="post-content">
+
+                        <h3 class="post-title"><a href="#">Latest News Post</a></h3>
+
+
+                        <ul class="post-bar">
+                            <li>
+                                <i class="fa fa-folder"></i>
+                                <a href="#">Mockup</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-4">
+                <div class="post-slide">
+
+                    <div class="post-img">
+                        <a href="#"><img src="{% static 'UI/images/img-2.jpg' %}" alt=""></a>
+                    </div>
+
+                    <div class="post-content">
+
+                        <h3 class="post-title"><a href="#">Latest News Post</a></h3>
+
+
+                        <ul class="post-bar">
+                            <li>
+                                <i class="fa fa-folder"></i>
+                                <a href="#">Mockup</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="row small_news">
+
+            <div class="col-md-2 col-sm-3 col-xs-4">
+                <div class="post-slide">
+
+                    <div class="post-img">
+                        <a href="#"><img src="{% static 'UI/images/img-2.jpg' %}" alt=""></a>
+                    </div>
+
+                    <div class="post-content">
+
+                        <h3 class="post-title"><a href="#">Latest News Post</a></h3>
+
+
+                        <ul class="post-bar">
+                            <li>
+                                <i class="fa fa-folder"></i>
+                                <a href="#">Mockup</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-2 col-sm-3 col-xs-4">
+                <div class="post-slide">
+
+                    <div class="post-img">
+                        <a href="#"><img src="{% static 'UI/images/img-2.jpg' %}" alt=""></a>
+                    </div>
+
+                    <div class="post-content">
+
+                        <h3 class="post-title"><a href="#">Latest News Post</a></h3>
+
+
+                        <ul class="post-bar">
+                            <li>
+                                <i class="fa fa-folder"></i>
+                                <a href="#">Mockup</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-3 col-xs-4">
+                <div class="post-slide">
+
+                    <div class="post-img">
+                        <a href="#"><img src="{% static 'UI/images/img-2.jpg' %}" alt=""></a>
+                    </div>
+
+                    <div class="post-content">
+
+                        <h3 class="post-title"><a href="#">Latest News Post</a></h3>
+
+
+                        <ul class="post-bar">
+                            <li>
+                                <i class="fa fa-folder"></i>
+                                <a href="#">Mockup</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-3 col-xs-4">
+                <div class="post-slide">
+
+                    <div class="post-img">
+                        <a href="#"><img src="{% static 'UI/images/img-2.jpg' %}" alt=""></a>
+                    </div>
+
+                    <div class="post-content">
+
+                        <h3 class="post-title"><a href="#">Latest News Post</a></h3>
+
+
+                        <ul class="post-bar">
+                            <li>
+                                <i class="fa fa-folder"></i>
+                                <a href="#">Mockup</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-3 col-xs-4">
+                <div class="post-slide">
+
+                    <div class="post-img">
+                        <a href="#"><img src="{% static 'UI/images/img-2.jpg' %}" alt=""></a>
+                    </div>
+
+                    <div class="post-content">
+
+                        <h3 class="post-title"><a href="#">Latest News Post</a></h3>
+
+
+                        <ul class="post-bar">
+                            <li>
+                                <i class="fa fa-folder"></i>
+                                <a href="#">Mockup</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-3 col-xs-4">
+                <div class="post-slide">
+
+                    <div class="post-img">
+                        <a href="#"><img src="{% static 'UI/images/img-2.jpg' %}" alt=""></a>
+                    </div>
+
+                    <div class="post-content">
+
+                        <h3 class="post-title"><a href="#">Latest News Post</a></h3>
+
+
+                        <ul class="post-bar">
+                            <li>
+                                <i class="fa fa-folder"></i>
+                                <a href="#">Mockup</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+{% endblock %} {% block scripts %}
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    google.charts.load('current', {
+        'packages': ['line']
+    });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+        var data = new google.visualization.DataTable();
+        data.addColumn('number', 'Day');
+        data.addColumn('number', 'NASDAK');
+        data.addColumn('number', 'ABIGAI');
+        data.addColumn('number', 'TASDEL');
+
+        data.addRows([
+            [1, 37.8, 80.8, 41.8],
+            [2, 30.9, 69.5, 32.4],
+            [3, 25.4, 57, 25.7],
+            [4, 11.7, 18.8, 10.5],
+            [5, 11.9, 17.6, 10.4],
+            [6, 8.8, 13.6, 7.7],
+            [7, 7.6, 12.3, 9.6],
+            [8, 12.3, 29.2, 10.6],
+            [9, 16.9, 42.9, 14.8],
+            [10, 12.8, 30.9, 11.6],
+            [11, 5.3, 7.9, 4.7],
+            [12, 6.6, 8.4, 5.2],
+            [13, 4.8, 6.3, 3.6],
+            [14, 4.2, 6.2, 3.4]
+        ]);
+
+        var options = {
+            chart: {
+                title: 'Stock market Price of companies',
+                subtitle: 'in Nepali Rupees (Rs)'
+            },
+
+        };
+
+        var chart = new google.charts.Line(document.getElementById('linechart_material'));
+
+        chart.draw(data, google.charts.Line.convertOptions(options));
+    }
+</script>
+
+{% endblock %}

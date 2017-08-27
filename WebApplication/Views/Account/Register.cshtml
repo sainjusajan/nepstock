@@ -1,0 +1,86 @@
+﻿@using WebApplication.Infrastructure.ViewModels.AccountViewModels
+@model RegisterViewModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+
+<section id="stock_login">
+    <div class="container">
+        <div class="login-page">
+
+  <div class="form">
+      <div class="">
+        <div asp-validation-summary="All" class="text-danger"></div>
+    </div>
+      <h3 class="text-center m-t-0 p-b-20">Register</h3>
+    <form class="login-form"asp-controller="Account" asp-action="Register" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" role="form">
+     
+     
+      <input asp-for="Email" type="text" placeholder="email"/>
+      <input asp-for="Password" type="password" placeholder="password"/>
+      <input asp-for="ConfirmPassword" type="password" placeholder="confirm password"/>
+      <button type="submit">Sign Up</button>
+
+      
+    </form>
+
+
+
+    </div>
+            </div>
+        </div>
+</section>
+
+
+<!-- 
+
+
+
+<div class="page-auth text-center">
+    <div class="tn-vp-center">
+        <ul class="tn-panel">
+            <li class="tn-panel-title">
+                Register
+            </li>
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <form asp-controller="Account" asp-action="Register" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" class="form-horizontal" role="form">
+
+                <div class="tn-m-b-5">
+                    <li class="tn-form-group">
+                        <label asp-for="Email" class="control-label sr-only"></label>
+
+                        <input asp-for="Email" class="form-control" placeholder="Email" />
+
+                    </li>
+                    <li class="tn-form-group">
+                        <label asp-for="Password" class="control-label sr-only"></label>
+
+                        <input asp-for="Password" class="form-control" placeholder="Password" />
+
+                    </li>
+                    <li class="tn-form-group">
+                        <label asp-for="ConfirmPassword" class="control-label sr-only"></label>
+
+                        <input asp-for="ConfirmPassword" class="form-control" placeholder="Confirm Password" />
+
+                    </li>
+
+
+                </div>
+                <li>
+
+                    <button type="submit" class="tn-btn form-control">Register</button>
+
+                </li>
+
+            </form>
+
+
+        </ul>
+
+    </div>
+</div> -->
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

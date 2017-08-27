@@ -1,0 +1,38 @@
+﻿[
+  {
+    "outputFile": "wwwroot/css/master.css",
+    "inputFile": "wwwroot/css/master.less"
+  },
+  {
+    "outputFile": "wwwroot/css/admin.css",
+    "inputFile": "wwwroot/css/admin.less"
+  },
+  {
+    "outputFile": "wwwroot/css/layout.css",
+    "inputFile": "wwwroot/css/layout.less"
+  },
+  {
+    "outputFile": "wwwroot/css/req.css",
+    "inputFile": "wwwroot/css/req.less"
+  },
+  {
+    "outputFile": "wwwroot/css/partial/page.css",
+    "inputFile": "wwwroot/css/partial/page.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/partial/_page.css",
+    "inputFile": "wwwroot/css/partial/_page.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/_form.css",
+    "inputFile": "wwwroot/css/_form.less"
+  },
+  {
+    "outputFile": "wwwroot/css/_btn.css",
+    "inputFile": "wwwroot/css/_btn.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/partial/_comments.css",
+    "inputFile": "wwwroot/css/partial/_comments.scss"
+  }
+]

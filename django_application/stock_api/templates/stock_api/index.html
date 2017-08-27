@@ -1,0 +1,20 @@
+{% extends "stock_api/base.html" %}
+
+{% block content %}
+
+
+<div class="container">
+    
+    <form method="POST" role="form" action=" {% url 'stock_api:index' %} " enctype="multipart/form-data">
+    
+        {% csrf_token %}
+        {{ uploadcsv_form.as_p }}
+        
+    
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    
+</div>
+
+
+{% endblock  %}

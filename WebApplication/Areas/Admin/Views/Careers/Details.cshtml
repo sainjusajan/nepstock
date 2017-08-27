@@ -1,0 +1,60 @@
+﻿@model WebApplication.Core.Domains.Careers
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="panel mb25">
+    <header class="panel-heading" style="margin-bottom: 30px;">Details</header>
+
+    <div class="panel-body">
+        <div class="clearfix"></div>
+        <div class="col-md-12">
+            <div class="m-0 p-t-30">
+                <dl class="dl-horizontal">
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Title)
+                    </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.Body)
+                    </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.DeadLine)
+                    </dd>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.PublishDate)
+                    </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.PublishedBy)
+                    </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.ImageUrl)
+                    </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.IsExpired)
+                    </dd>
+                </dl>
+            </div>
+            <div class="col-lg-4">
+                <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-default">Edit</a>
+                <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Breadcrumbs {
+    <ol class="breadcrumb">
+        <li>
+            <a asp-controller="Dashboard" asp-action="Index">Home</a>
+        </li>
+        <li>
+            <a asp-controller="Careers" asp-action="Index">Careers</a>
+        </li>
+        <li class="active">
+            <a href="javascript:;">Details</a>
+        </li>
+    </ol>
+}

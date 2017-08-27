@@ -1,0 +1,8 @@
+﻿@model Task<List<WebApplication.Core.Domains.StockData>>
+
+
+@foreach (var item in Model.Result)
+{
+    @item.CompanyName
+    @item.CompanyAbbr
+}

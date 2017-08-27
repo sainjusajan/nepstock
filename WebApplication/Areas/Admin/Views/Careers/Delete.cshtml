@@ -1,0 +1,43 @@
+﻿@model WebApplication.Core.Domains.Careers
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="panel mb25">
+    <
+    <header class="panel-heading" style="margin-bottom: 30px;"> Are you sure you want to delete this?</header>
+
+    <div class="panel-body">
+        <div class="clearfix"></div>
+        <div class="col-md-12">
+            <div class="m-0 p-t-30">
+                <dl class="dl-horizontal">
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Title)
+                    </dt>
+                </dl>
+                <form asp-action="Delete">
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Delete" class="btn btn-danger" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Breadcrumbs {
+    <ol class="breadcrumb">
+        <li>
+            <a asp-controller="Dashboard" asp-action="Index">Home</a>
+        </li>
+        <li>
+            <a asp-controller="Careers" asp-action="Index">Careers</a>
+        </li>
+        <li class="active">
+            <a href="javascript:;">Delete</a>
+        </li>
+    </ol>
+}

@@ -1,0 +1,28 @@
+{
+  "name": "ckeditor",
+  "description": "JavaScript WYSIWYG web text editor.",
+  "keywords": [
+    "ckeditor",
+    "fckeditor",
+    "editor",
+    "wysiwyg",
+    "html",
+    "richtext",
+    "text",
+    "javascript"
+  ],
+  "authors": "CKSource (http://cksource.com/)",
+  "license": "For licensing, see LICENSE.md or http://ckeditor.com/license.",
+  "homepage": "http://ckeditor.com",
+  "main": "./ckeditor.js",
+  "moduleType": "globals",
+  "_release": "standard/4.6.2",
+  "_resolution": {
+    "type": "tag",
+    "tag": "standard/4.6.2",
+    "commit": "d745146a81bed38abcff151a1d4d8965f1e16597"
+  },
+  "_source": "https://github.com/ckeditor/ckeditor-releases.git",
+  "_target": "standard/4.6.2",
+  "_originalSource": "ckeditor"
+}

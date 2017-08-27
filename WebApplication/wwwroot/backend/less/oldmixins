@@ -1,0 +1,111 @@
+.text-shadow (@string: 0 1px 3px rgba(0, 0, 0, 0.25)) {
+    text-shadow: @string;
+}
+.border-radius (@radius: 5px) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius:    @radius;
+    border-radius:         @radius;
+
+    -moz-background-clip:    padding;
+    -webkit-background-clip: padding-box;
+    background-clip:         padding-box;
+}
+.clearfix() {
+    content: '';
+    clear: both;
+    display: table;
+}
+.f-w-100 { font-weight: 100 !important; }
+.f-w-200 { font-weight: 200 !important; }
+.f-w-300 { font-weight: 300 !important; }
+.f-w-400 { font-weight: 400 !important; }
+.f-w-500 { font-weight: 500 !important; }
+.f-w-600 { font-weight: 600 !important; }
+.f-w-700 { font-weight: 700 !important; }
+
+/*=================================================================
+Height 
+==================================================================*/
+.height-xs { height: 150px !important; }
+.height-sm { height: 300px !important; }
+.height-md { height: 450px !important; }
+.height-lg { height: 600px !important; }
+.height-full { height: 100% !important; }
+.height-50 { height: 50px !important; }
+.height-100 { height: 100px !important; }
+.height-150 { height: 150px !important; }
+.height-200 { height: 200px !important; }
+.height-250 { height: 250px !important; }
+.height-300 { height: 300px !important; }
+.height-350 { height: 350px !important; }
+.height-400 { height: 400px !important; }
+.height-450 { height: 450px !important; }
+.height-500 { height: 500px !important; }
+.height-550 { height: 550px !important; }
+.height-600 { height: 600px !important; }
+/*=================================================================
+Width
+==================================================================*/
+.width-auto{ width: auto !important; }
+.width-xs { width: 150px !important; }
+.width-sm { width: 300px !important; }
+.width-md { width: 450px !important; }
+.width-lg { width: 600px !important; }
+.width-full { width: 100% !important; }
+.width-25 { width: 25px !important; }
+.width-50 { width: 50px !important; }
+.width-100 { width: 100px !important; }
+.width-150 { width: 150px !important; }
+.width-200 { width: 200px !important; }
+.width-250 { width: 250px !important; }
+.width-300 { width: 300px !important; }
+.width-350 { width: 350px !important; }
+.width-400 { width: 400px !important; }
+.width-450 { width: 450px !important; }
+.width-500 { width: 500px !important; }
+.width-550 { width: 550px !important; }
+.width-600 { width: 600px !important; }
+.width-700 { width: 700px !important; }
+
+/*=================================================================
+Loop Margin & Padding
+==================================================================*/
+
+.margin-padding-css-generator(@counter) when (@counter > -1) {
+    .m-@{counter} { margin: (@counter * 1px) !important; }
+    .m-t-@{counter} { margin-top: (@counter * 1px) !important; }
+    .m-r-@{counter} { margin-right: (@counter * 1px) !important; }
+    .m-b-@{counter} { margin-bottom: (@counter * 1px) !important; }
+    .m-l-@{counter} { margin-left: (@counter * 1px) !important; }
+    
+    .p-@{counter} { padding: (@counter * 1px) !important; }
+    .p-t-@{counter} { padding-top: (@counter * 1px) !important; }
+    .p-r-@{counter} { padding-right: (@counter * 1px) !important; }
+    .p-b-@{counter} { padding-bottom: (@counter * 1px) !important; }
+    .p-l-@{counter} { padding-left: (@counter * 1px) !important; }
+    
+    .margin-padding-css-generator((@counter - 1));
+}
+.margin-padding-css-generator(500);
+
+/*=================================================================
+Loop Line Height
+==================================================================*/
+
+.line-height-css-generator(@counter) when (@counter > -1) {
+    .l-h-@{counter} { line-height: (@counter * 1px) !important; }
+    .line-height-css-generator((@counter - 1));
+}
+.line-height-css-generator(100);
+
+/*=================================================================
+Loop Font Size
+==================================================================*/
+
+.font-size-css-generator(@counter) when (@counter > 7) {
+    .f-s-@{counter} { font-size: (@counter * 1px) !important; }
+
+    .font-size-css-generator((@counter - 1));
+}
+.font-size-css-generator(100);
+

@@ -1,0 +1,289 @@
+body {
+  color: #000;
+}
+ul.sidebar-menu li ul.sub li a:hover {
+  background: none;
+  color: #efefef;
+}
+ul.sub li a.active,
+ul.sub li a:hover,
+ul.sub li a:focus {
+  background: transparent;
+  color: #eee !important;
+}
+.home-numbers {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.home-numbers:hover h1,
+.home-numbers:hover p {
+  color: #9f167e !important;
+}
+.bread_crumb {
+  background: #f9f9f9;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+.bread_crumb h3 {
+  margin: 0;
+  font-size: 22px;
+}
+.bread_crumb .crumbs {
+  list-style-type: none;
+  margin: 3px 0 0 0;
+  text-align: right;
+}
+.bread_crumb .crumbs li {
+  display: inline-block;
+  padding: 0 4px;
+}
+@media screen and (max-width: 768px) {
+  .bread_crumb h3 {
+    text-align: center;
+  }
+  .bread_crumb .crumbs {
+    text-align: center;
+  }
+}
+table.dataTable.display tbody tr.odd > .sorting_1,
+table.dataTable.order-column.stripe tbody tr.odd > .sorting_1 {
+  background-color: transparent;
+}
+.dataTables_wrapper .dataTables_paginate {
+  padding-bottom: 2.5em !important;
+}
+.dataTables_wrapper .dataTables_info {
+  padding-bottom: 2.755em !important;
+}
+table.dataTable tfoot th,
+table.dataTable tfoot td {
+  padding: 10px 18px 6px 9px;
+}
+tfoot input,
+tfoot textarea,
+tfoot select,
+tfoot button {
+  text-indent: 10px;
+}
+.data_tableau .btn-group {
+  text-align: center;
+}
+.data_tableau .btn-success,
+.data_tableau .btn-danger {
+  width: 68px;
+}
+tfoot input {
+  width: 85px;
+}
+.tableau .checkbox label,
+.tableau .radio label {
+  padding-left: 0;
+}
+.tableau .checkbox span {
+  position: relative;
+  top: -2px;
+  left: 7px;
+}
+.tableau h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  margin-top: 8px;
+  font-size: 22px;
+}
+.tableau .form-group {
+  margin-bottom: 0;
+}
+.table-inner-search {
+  /* Demo 2 */
+}
+.table-inner-search input {
+  outline: none;
+}
+.table-inner-search input[type=search] {
+  -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box;
+  font-family: inherit;
+  font-size: 100%;
+}
+.table-inner-search input::-webkit-search-decoration,
+.table-inner-search input::-webkit-search-cancel-button {
+  display: none;
+}
+.table-inner-search input[type=search] {
+  background: #ededed url(http://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
+  border: solid 1px #ccc;
+  padding: 9px 10px 9px 32px;
+  width: 55px;
+  border-radius: 10em;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+.table-inner-search input[type=search]:focus {
+  width: 130px;
+  background-color: #fff;
+  border-color: #66CC75;
+  box-shadow: 0 0 5px rgba(109, 207, 246, 0.5);
+}
+.table-inner-search input:-moz-placeholder {
+  color: #999;
+}
+.table-inner-search input::-webkit-input-placeholder {
+  color: #999;
+}
+.table-inner-search #demo-2 input[type=search] {
+  width: 15px;
+  padding-left: 10px;
+  color: transparent;
+  cursor: pointer;
+}
+.table-inner-search #demo-2 input[type=search]:hover {
+  background-color: #fff;
+}
+.table-inner-search #demo-2 input[type=search]:focus {
+  width: 130px;
+  padding-left: 32px;
+  color: #000;
+  background-color: #fff;
+  cursor: auto;
+}
+.table-inner-search #demo-2 input:-moz-placeholder {
+  color: transparent;
+}
+.table-inner-search #demo-2 input::-webkit-input-placeholder {
+  color: transparent;
+}
+.dataTables_wrapper .dataTables_info {
+  padding-top: 2.755em !important;
+}
+.dataTables_wrapper .dataTables_paginate {
+  padding-top: 2.25em !important;
+}
+.line-form .form-control {
+  width: 380px;
+}
+.select2-container .select2-selection--single {
+  height: 34px !important;
+}
+.select2-container--default .select2-selection--single {
+  border: 1px solid #ccc;
+}
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  line-height: 30px;
+}
+.btn-file {
+  width: 425px;
+  text-align: left;
+}
+.file_upload {
+  margin-bottom: 50px;
+}
+.file_upload .custom-file-upload-hidden {
+  display: none;
+  visibility: hidden;
+  position: absolute;
+  left: -9999px;
+}
+.file_upload .custom-file-upload {
+  display: block;
+  width: auto;
+  font-size: 16px;
+  margin-top: 30px;
+}
+.file_upload .custom-file-upload label {
+  display: block;
+  margin-bottom: 5px;
+}
+.file_upload .file-upload-wrapper {
+  position: relative;
+  margin-bottom: 5px;
+}
+.file_upload .file-upload-input {
+  width: 300px;
+  color: #000;
+  font-size: 16px;
+  padding: 11px 17px;
+  border: none;
+  background-color: #f9f9f9;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  float: left
+  /* IE 9 Fix */
+}
+.file_upload .file-upload-input:hover,
+.file_upload .file-upload-input:focus {
+  background-color: #f9f9f9;
+  outline: none;
+}
+.file_upload .file-upload-button {
+  cursor: pointer;
+  display: inline-block;
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  padding: 11px 20px;
+  border: none;
+  margin-left: -1px;
+  background-color: #9f167e;
+  float: left;
+  /* IE 9 Fix */
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+.file_upload .file-upload-button:hover {
+  background-color: #6d2018;
+}
+.file_upload .btn {
+  margin-left: 20px;
+  margin-top: -2px;
+  border-radius: 0;
+}
+.nine_seven_seven {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #9f167e;
+  font-weight: 700;
+}
+.side_table thead th,
+.side_table_2 thead th {
+  background: #9f167e;
+  color: #fff;
+}
+.side_table tbody tr {
+  font-size: 18px;
+  font-weight: 700;
+}
+.side_table_2 tr td:first-child {
+  font-weight: 700;
+}
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default {
+  border: none !important;
+  border-radius: 0 !important;
+}
+.dataTables_filter label input {
+  width: 370px;
+}
+.dash-news {
+  background: #f9f9f9;
+  padding: 10px;
+}
+.dash-news img {
+  width: 110px;
+}
+.dash-news .media-heading {
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+.dash-news p {
+  font-size: 15px;
+  color: #000;
+  font-weight: 200;
+  line-height: 25px;
+}
